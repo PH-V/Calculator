@@ -17,14 +17,14 @@ class Calculator {
 
     delete() {
         this.now = this.now.toString().slice(0,-1)
-        if(this.now === ''){
+        if(this.now === '' || this.now === '-'){
             this.now = '0'
         }
     }
 
     appendNumber(number) {
         if(number === '.' && this.now.includes('.')) return
-        if(number === '±' && this.now === '') return
+        if(number === '±' && this.now === '0') return
         if(number === '±'){
             this.now = this.now*(-1)
             return
